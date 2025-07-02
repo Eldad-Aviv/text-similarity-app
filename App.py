@@ -1,8 +1,11 @@
 import streamlit as st
 from sentence_transformers import SentenceTransformer, util
-import torch
 
-model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
+@st.cache_resource
+def load_model():
+    return SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
+
+model = load_model()
 
 st.title("Hebrew Text Similarity by SOCON lab")
 
