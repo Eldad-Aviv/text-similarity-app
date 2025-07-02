@@ -1,7 +1,10 @@
 import streamlit as st
 from sentence_transformers import SentenceTransformer, util
+import torch
 
-# Load a lightweight model
+device = "cpu"  # Force CPU on Streamlit Cloud
+model = SentenceTransformer('sentence-transformers/LaBSE', device=device)
+
 model = SentenceTransformer('sentence-transformers/LaBSE')
 
 st.title("Text Similarity Checker")
