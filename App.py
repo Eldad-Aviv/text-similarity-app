@@ -5,7 +5,7 @@ import torch
 device = "cpu"  # Force CPU on Streamlit Cloud
 model = SentenceTransformer('sentence-transformers/LaBSE', device=device)
 
-model = SentenceTransformer('sentence-transformers/LaBSE')
+#model = SentenceTransformer('sentence-transformers/LaBSE')
 
 st.title("Text Similarity Checker")
 
