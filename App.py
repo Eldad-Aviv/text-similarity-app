@@ -2,12 +2,10 @@ import streamlit as st
 from sentence_transformers import SentenceTransformer, util
 import torch
 
-device = "cpu"  # Force CPU on Streamlit Cloud
-model = SentenceTransformer('sentence-transformers/LaBSE', device=device)
+model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
 
-#model = SentenceTransformer('sentence-transformers/LaBSE')
+st.title("Hebrew Text Similarity by SOCON lab")
 
-st.title("Text Similarity Checker")
 
 text1 = st.text_area("Enter the first text:", height=150)
 text2 = st.text_area("Enter the second text:", height=150)
